@@ -5,6 +5,11 @@ services:
     environment:
       - NODE_ENV=testing
 
+    build:
+      context: .
+      args:
+        - NODE_ENV=testing
+
     command:
       - start:testing
 

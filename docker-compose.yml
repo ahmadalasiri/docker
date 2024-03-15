@@ -3,5 +3,3 @@ version: "3.8"
 services:
   hello-express:
     container_name: express-container-compose
-
-    build: .

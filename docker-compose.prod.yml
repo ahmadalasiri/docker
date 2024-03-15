@@ -2,19 +2,16 @@ version: "3.8"
 
 services:
   hello-express:
-    volumes:
-      - ./src:/app/src:ro
+    command:
+      - start
 
     build:
       context: .
       args:
-        - NODE_ENV=development
-
-    command:
-      - start:dev
+        - NODE_ENV=production
 
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
 
     ports:
       - "80:80"

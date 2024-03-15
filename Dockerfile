@@ -6,9 +6,12 @@ WORKDIR /app
 # Install app dependencies
 COPY package.json .
 
-# RUN npm install -g nodemon
+ARG NODE_ENV
 
-RUN npm install
+RUN if [ "$NODE_ENV" = "production" ]; \
+    then npm install --production; \
+    else npm install; \
+    fi
 
 # Bundle app source
 COPY . .
@@ -17,4 +20,4 @@ EXPOSE 4000
 
 ENTRYPOINT [ "npm" , "run" ]
 
-CMD [ "start" ]
+CMD [ "start:watch" ]
