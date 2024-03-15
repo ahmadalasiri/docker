@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  hello-express:
+    container_name: express-container-compose
+    build: .
+    volumes:
+      - ./src:/app/src:ro
+    command:
+      - start:dev
+    ports:
+      - 80:80
+    environment:
+      - NODE_ENV=production
+      - PORT=80
+    env_file:
+      - .env

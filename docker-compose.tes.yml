@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  hello-express:
+    environment:
+      - NODE_ENV=testing
+
+    command:
+      - start:testing
+
+    ports:
+      - "5000:5000"
+
+    env_file:
+      - .env.test
