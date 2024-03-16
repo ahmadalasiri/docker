@@ -7,8 +7,9 @@ services:
 
     build:
       context: .
-      args:
-        - NODE_ENV=testing
+      # args:
+      #   - NODE_ENV=testing
+      target: testing
 
     command:
       - start:testing

@@ -7,8 +7,9 @@ services:
 
     build:
       context: .
-      args:
-        - NODE_ENV=development
+      # args:
+      #   - NODE_ENV=development
+      target: development
 
     command:
       - start:dev
